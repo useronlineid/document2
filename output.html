@@ -20,9 +20,6 @@
             position: relative;
             width: 1000px;
             height: 480px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
             padding: 20px;
         }
         .output-text {
@@ -33,6 +30,15 @@
             color: red;
             width: 900px;
             white-space: normal;
+        }
+        img.background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
     </style>
 </head>
@@ -53,7 +59,11 @@
             };
 
             const container = document.getElementById('outputContainer');
-            container.style.backgroundImage = `url(${imageURL})`;
+
+            const backgroundImage = new Image();
+            backgroundImage.src = imageURL;
+            backgroundImage.classList.add('background');
+            container.appendChild(backgroundImage);
 
             const data = [
                 { value: formData.input1, style: { top: '50px', left: '50px', color: 'black' } },
