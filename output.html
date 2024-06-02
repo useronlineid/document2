@@ -14,10 +14,12 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: transparent;
+            background-color: #f0f8ff;
         }
         #outputContainer {
             position: relative;
+            width: 1000px;
+            height: 480px;
             padding: 20px;
         }
         .output-text {
@@ -26,6 +28,7 @@
         }
         .red-text {
             color: red;
+            width: 900px;
             white-space: normal;
         }
         img.background {
@@ -77,8 +80,8 @@
                 output.style.top = item.style.top;
                 output.style.left = item.style.left;
                 output.style.color = item.style.color;
-                output.style.width = item.style.width || 'auto';
-                output.style.whiteSpace = item.style.whiteSpace || 'nowrap';
+                output.style.width = item.style.width  'auto';
+                output.style.whiteSpace = item.style.whiteSpace  'nowrap';
                 output.textContent = item.value;
                 if (item.style.color === 'red') {
                     output.classList.add('red-text');
@@ -92,11 +95,6 @@
                 image.style.width = '100%';
                 image.style.height = 'auto';
                 document.body.innerHTML = '';
-                document.body.style.margin = '0';
-                document.body.style.display = 'flex';
-                document.body.style.justifyContent = 'center';
-                document.body.style.alignItems = 'center';
-                document.body.style.backgroundColor = 'transparent';
                 document.body.appendChild(image);
             });
         });
